@@ -181,9 +181,9 @@ client.on('interactionCreate', async (interaction) => {
                 .setCustomId('ticket-menu')
                 .setPlaceholder('اختر نوع طلبك...')
                 .addOptions([
-                    { label: 'شراء', description: 'طلب شراء منتج من المتجر', value: 'purchase', emoji: '🛒' },
-                    { label: 'استرجاع', description: 'طلب استرجاع أو استرداد', value: 'refund', emoji: '↩️' },
-                    { label: 'دعم فني', description: 'مشكلة تقنية أو استفسار فني', value: 'support', emoji: '🎧' },
+                    { label: 'شراء', value: 'purchase', emoji: '🛒' },
+                    { label: 'استرجاع', value: 'refund', emoji: '↩️' },
+                    { label: 'دعم فني', value: 'support', emoji: '🎧' },
                 ]);
 
             const row = new ActionRowBuilder().addComponents(menu);
