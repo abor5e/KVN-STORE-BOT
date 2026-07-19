@@ -181,9 +181,9 @@ client.on('interactionCreate', async (interaction) => {
                 .setCustomId('ticket-menu')
                 .setPlaceholder('اختر نوع طلبك...')
                 .addOptions([
-                    { label: 'شراء', value: 'purchase', emoji: '🛒' },
-                    { label: 'استرجاع', value: 'refund', emoji: '↩️' },
-                    { label: 'دعم فني', value: 'support', emoji: '🎧' },
+                    { label: 'شراء', value: 'purchase', emoji: { id: '1528333860582985829', name: 'emoji_3' } },
+                    { label: 'استرجاع', value: 'refund', emoji: { id: '1528333091867988100', name: 'emoji_1' } },
+                    { label: 'دعم فني', value: 'support', emoji: { id: '1528333150785376376', name: 'emoji_2' } },
                 ]);
 
             const row = new ActionRowBuilder().addComponents(menu);
@@ -236,9 +236,9 @@ client.on('interactionCreate', async (interaction) => {
                 .setCustomId('setup-category-select')
                 .setPlaceholder('اختر قسماً...')
                 .addOptions([
-                    { label: 'شراء', value: 'purchase', emoji: '🛒' },
-                    { label: 'استرجاع', value: 'refund', emoji: '↩️' },
-                    { label: 'دعم فني', value: 'support', emoji: '🎧' },
+                    { label: 'شراء', value: 'purchase', emoji: { id: '1528333860582985829', name: 'emoji_3' } },
+                    { label: 'استرجاع', value: 'refund', emoji: { id: '1528333091867988100', name: 'emoji_1' } },
+                    { label: 'دعم فني', value: 'support', emoji: { id: '1528333150785376376', name: 'emoji_2' } },
                 ]);
             await interaction.reply({
                 embeds: [new EmbedBuilder().setTitle('⚙️ تخصيص رتبة للقسم').setDescription('اختر القسم:').setColor(0xE8B923)],
@@ -435,12 +435,12 @@ client.on('interactionCreate', async (interaction) => {
             };
 
             const categoryEmojis = {
-                'purchase': '🛒',
-                'refund':   '↩️',
-                'support':  '🎧'
+                'purchase': '<:emoji_3:1528333860582985829>',
+                'refund':   '<:emoji_1:1528333091867988100>',
+                'support':  '<:emoji_2:1528333150785376376>'
             };
 
-            const channelName = (categoryEmojis[selectedValue] || '🎫') + '-ticket-' + ticketNumber;
+            const channelName = 'ticket-' + ticketNumber;
             const categoryRoleId = cfg.categoryRoles && cfg.categoryRoles[selectedValue];
             const activeRoleId = categoryRoleId || cfg.staffRoleId;
 
